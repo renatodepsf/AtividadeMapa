@@ -5,7 +5,7 @@
  */
 package br.edu.unicesumar.view;
 
-import br.edu.unicesumar.core.dao.UsuarioDAO;
+import br.edu.unicesumar.core.dao.UsuarioDAOImpl;
 import br.edu.unicesumar.core.entity.Usuario;
 
 /**
@@ -134,7 +134,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        UsuarioDAO dao = new UsuarioDAO();
+        UsuarioDAOImpl dao = new UsuarioDAOImpl();
         dao.cadastrarUsuario(new Usuario(cNome.getText(), cLogin.getText(), cSenha.getText(), cEmail.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
