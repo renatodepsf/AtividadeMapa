@@ -8,5 +8,4 @@ public class PrincipalMapa {
         TelaAcesso telaAcesso = new TelaAcesso();
         telaAcesso.setVisible(true);
     }
-    
 }

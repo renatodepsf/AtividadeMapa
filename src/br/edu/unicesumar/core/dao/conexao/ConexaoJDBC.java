@@ -14,20 +14,32 @@ public class ConexaoJDBC {
     
     public static Connection conexao;
     
-    public static Connection getConexao() {
+    public static Connection conectar() {
         try {
             if(conexao == null) {
                 conexao = DriverManager.getConnection(URL, USER, PASSWORD);
                 return conexao;
             }
-            else {
-                return null;
-            }
+            return conexao;
         }
         catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showConfirmDialog(null, "Erro ao conectar no banco de dados");
             return null;
         }
+    }
+    
+    public static Connection desconectar() {
+        try {
+            if(conexao != null) {
+                conexao.close();
+            }
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showConfirmDialog(null, "Não foi possível desconectar o banco de dados");
+            return null;
+        }
+        return conexao;
     }
 }
